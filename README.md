@@ -1,6 +1,6 @@
 # Shai-Hulud Malicious Package Scanner 
 
-A Node.js tool to scan `package.json` files for known malicious npm packages using CSV data sources.
+A Node.js tool to scan `package.json` files for known malicious npm packages using CSV data sources. 
 
 ## Overview
 
