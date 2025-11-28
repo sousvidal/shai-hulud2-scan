@@ -9,6 +9,7 @@ This scanner checks your project's dependencies against a database of known mali
 ## Features
 
 - ✅ Scans all dependency types (dependencies, devDependencies, peerDependencies, optionalDependencies)
+- ✅ **Recursive scanning** - scan all package.json files in subdirectories
 - ✅ Supports multiple CSV files in the `/events` folder
 - ✅ Intelligent version matching using semver
 - ✅ Color-coded terminal output
@@ -34,6 +35,22 @@ Scan a specific folder:
 node scan-malicious-packages.js /path/to/your/project
 ```
 
+### Recursive Scanning
+
+Scan a folder and all its subdirectories for package.json files (useful for monorepos):
+
+```bash
+node scan-malicious-packages.js -r /path/to/your/monorepo
+# or
+node scan-malicious-packages.js --recursive /path/to/your/monorepo
+```
+
+This will:
+- Find all `package.json` files in the target directory and subdirectories
+- Skip `node_modules` and hidden directories
+- Scan each found `package.json` file independently
+- Report which file contains any malicious packages
+
 ### Using npm scripts
 
 Scan the current directory:
@@ -48,11 +65,18 @@ Custom scan:
 npm run scan /path/to/your/project
 ```
 
+Recursive scan:
+
+```bash
+npm run scan -- -r /path/to/your/monorepo
+```
+
 ### As a global command (after npm link)
 
 ```bash
 npm link
 shai-hulud /path/to/your/project
+shai-hulud -r /path/to/your/monorepo
 ```
 
 ## CSV Format
