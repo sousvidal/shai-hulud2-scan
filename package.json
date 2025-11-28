@@ -1,0 +1,26 @@
+{
+  "name": "shai-hulud-scanner",
+  "version": "1.0.0",
+  "description": "Malicious package scanner for npm packages",
+  "main": "scan-malicious-packages.js",
+  "scripts": {
+    "scan": "node scan-malicious-packages.js",
+    "test": "node scan-malicious-packages.js ."
+  },
+  "bin": {
+    "shai-hulud": "./scan-malicious-packages.js"
+  },
+  "keywords": [
+    "security",
+    "malicious",
+    "package",
+    "scanner",
+    "npm"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "papaparse": "^5.4.1",
+    "semver": "^7.6.0"
+  }
+}
